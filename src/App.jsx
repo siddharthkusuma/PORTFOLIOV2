@@ -91,7 +91,7 @@ const projects = [
     stats: { tenYearReturn: 12.7, thirtyYearReturn: 26.5, varTen: -2.87, varThirty: -7.19 },
     files: [
       { label: "Full Report (PDF)", icon: "pdf",   href: "/projects/portfolio-optimization/Final_Report_Quant.pdf" },
-      { label: "Excel Model",       icon: "excel", href: "/projects/portfolio-optimization/Portfolio_Model.xlsx"  },
+      { label: "Excel Model",       icon: "excel", href: "https://drive.google.com/drive/folders/1g0dY1wIVmqrzlqBJY4r7trtuGGWzFl84?usp=share_link" },
     ],
     points: [
       { label: "Portfolio Modeling",
