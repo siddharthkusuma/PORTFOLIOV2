@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* THE FIX: Adds space for the ticker/nav and makes clicking links smooth */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px; 
+}
+
+body {
+  background-color: #ffffff;
+  color: #0f172a; /* Slate 900 */
+}
+
+/* Custom animation for the infinite ticker */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  animation: ticker 30s linear infinite;
+}
+
+/* Pause the ticker when the user hovers over it */
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
