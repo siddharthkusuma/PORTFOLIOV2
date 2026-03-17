@@ -90,7 +90,7 @@ const projects = [
     // Key stats from the report — used in the live chart
     stats: { tenYearReturn: 12.7, thirtyYearReturn: 26.5, varTen: -2.87, varThirty: -7.19 },
     files: [
-      { label: "Full Report (PDF)", icon: "pdf",   href: "/projects/portfolio-optimization/Final_Report_Quant.pdf" },
+      { label: "Full Report (PDF)", icon: "pdf",   href: "https://drive.google.com/file/d/17qaFLsNJtIOIfjzzynuW71K0LpPfJqAI/view?usp=share_link" },
       { label: "Excel Model",       icon: "excel", href: "https://drive.google.com/drive/folders/1g0dY1wIVmqrzlqBJY4r7trtuGGWzFl84?usp=share_link" },
     ],
     points: [
