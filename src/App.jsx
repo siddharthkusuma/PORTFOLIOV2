@@ -285,7 +285,7 @@ function PortfolioChart() {
           y: {
             ticks: {
               color: '#94a3b8', font: { size: 10 },
-              callback: v => `$${(v/1000).toFixed(0)}k`,
+              callback: v => v >= 1000000 ? `$${(v/1000000).toFixed(1)}M` : `$${(v/1000).toFixed(0)}k`,
             },
             grid: { color: 'rgba(148,163,184,0.1)' },
             border: { display: false },
@@ -313,6 +313,7 @@ function PortfolioChart() {
   const spFinal30  = Math.round(100000 * Math.pow(1.105, 30));
   const spFinal10  = Math.round(100000 * Math.pow(1.105, 10));
   const spFinal    = mode === '30yr' ? spFinal30 : spFinal10;
+  const fmt = v => v >= 1000000 ? `$${(v/1000000).toFixed(1)}M` : `$${(v/1000).toFixed(0)}k`;
 
   return (
     <div className="bg-slate-950 rounded-[28px] p-6 md:p-8 mt-6">
@@ -340,14 +341,14 @@ function PortfolioChart() {
       <div className="grid grid-cols-2 gap-3 mb-6">
         <div className="bg-emerald-950/60 border border-emerald-900/50 rounded-2xl p-4">
           <p className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest mb-1">Optimized Portfolio</p>
-          <p className="text-2xl font-black text-white">${(finalVal/1000).toFixed(0)}k</p>
+          <p className="text-2xl font-black text-white">{fmt(finalVal)}</p>
           <p className="text-emerald-400 text-xs font-semibold mt-0.5">
             {mode==='30yr' ? '26.5%' : '12.7%'} avg annual return
           </p>
         </div>
         <div className="bg-slate-800/60 border border-slate-700/50 rounded-2xl p-4">
           <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-1">S&P 500 Benchmark</p>
-          <p className="text-2xl font-black text-slate-300">${(spFinal/1000).toFixed(0)}k</p>
+          <p className="text-2xl font-black text-slate-300">{fmt(spFinal)}</p>
           <p className="text-slate-500 text-xs font-semibold mt-0.5">~10.5% long-run average</p>
         </div>
       </div>
